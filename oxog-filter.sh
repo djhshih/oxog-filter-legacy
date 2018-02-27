@@ -13,7 +13,7 @@ java=/broad/software/free/Linux/redhat_6_x86_64/pkgs/jdk_1.7.0-71/bin/java
 
 # Python 2.7
 # Ensure that `python` is is available on $PATH
-PATH=/broad/software/free/Linux/redhat_6_x86_64/pkgs/python_2.7.1-sqlite3-rtrees/bin/:$PATH
+export PATH=/broad/software/free/Linux/redhat_6_x86_64/pkgs/python_2.7.1-sqlite3-rtrees/bin/:$PATH
 
 
 # INPUTS #####################################################################
