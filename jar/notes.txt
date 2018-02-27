@@ -1,0 +1,6 @@
+All jar files were compiled with Java 7.
+
+CollectOxoGMetrics-1.5 is released as Picard CollectOxoGMetrics
+(same results are obtained with Picard 2.6.0)
+
+GenomeAnalysisTK-1.5 OxoGMetrics was never publically released.

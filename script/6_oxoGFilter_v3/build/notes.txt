@@ -1,0 +1,4 @@
+Turning on plotting causes seg fault while generating a specific plot in the script.
+However, 0/1 values passed to matlab appears to be misinterpreted.
+
+Therefore, the source file was edited to disable plotting and the matlab binary was re-built (../build).
