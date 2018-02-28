@@ -18,7 +18,7 @@ export PATH=/broad/software/free/Linux/redhat_6_x86_64/pkgs/python_2.7.1-sqlite3
 
 # INPUTS #####################################################################
 
-if $# < 6; then
+if [[ $# < 6 ]]; then
   echo "usage: ${##*/} <id> <bam> <maf> <ref> <dbsnp> <outdir>"
   exit 1
 fi
