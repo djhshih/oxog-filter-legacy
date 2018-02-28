@@ -29,7 +29,7 @@ set -e
 echo "ID:       	${ID}"
 echo "Bam:         	${BAM}" 
 echo "Reference:	${REF}" 
-echo "dbSNP:    	${DBSNP}" 
+#echo "dbSNP:    	${DBSNP}" 
 echo "Context:     	${CTX}" 
 echo "Output area:	${OUT}" 
 echo "Jar file:	        ${JAR}" 
@@ -61,7 +61,13 @@ if [ ! -f $bamdir/$oxoQ ]; then
 
     echo "generate oxog_metrics file from bam"
         
-    ${JAVA} -Xmx3600M -jar ${JAR} INPUT=${BAM} OUTPUT=${OUT}/${oxoQ} REFERENCE_SEQUENCE=${REF} DB_SNP=${DBSNP}  MINIMUM_QUALITY_SCORE=20 MINIMUM_MAPPING_QUALITY=30 MINIMUM_INSERT_SIZE=60 MAXIMUM_INSERT_SIZE=600 USE_OQ=true CONTEXT_SIZE=1 STOP_AFTER=100000000 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=LENIENT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false
+    if [[ -n ${DBSNP} && ${DBSNP} != "null" ]]; then
+       DB_SNP_ARG="DB_SNP=${DBSNP}"
+    else
+       DB_SNP_ARG=""
+    fi
+    ${JAVA} -Xmx3600M -jar ${JAR} INPUT=${BAM} OUTPUT=${OUT}/${oxoQ} REFERENCE_SEQUENCE=${REF} ${DB_SNP_ARG} MINIMUM_QUALITY_SCORE=20 MINIMUM_MAPPING_QUALITY=30 MINIMUM_INSERT_SIZE=60 MAXIMUM_INSERT_SIZE=600 USE_OQ=true CONTEXT_SIZE=1 STOP_AFTER=100000000 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=LENIENT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false
+
     if [[ $? -ne 0 ]] ; then
         exit 1
     fi
