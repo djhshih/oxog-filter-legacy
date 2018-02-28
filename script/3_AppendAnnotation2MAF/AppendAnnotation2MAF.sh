@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # use Python-2.7 
 
