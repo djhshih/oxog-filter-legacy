@@ -1,6 +1,8 @@
 #!/bin/bash
 # Filter OxoG artifacts from MAF file of called somatic SNVs
 
+set -euo pipefail
+
 # DEPENDENCIES ###############################################################
 
 # NOTE: Edit the below paths according to your environment.
