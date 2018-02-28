@@ -9,15 +9,12 @@ set -euo pipefail
 
 # Matlab (2013a) Common Runtime installation directory
 mcr_root=/opt/mcr/v81
-#mcr_root=/broad/software/nonfree/Linux/redhat_5_x86_64/pkgs/matlab_2013a
 
 # Java 1.7
 java=java
-#java=/broad/software/free/Linux/redhat_6_x86_64/pkgs/jdk_1.7.0-71/bin/java
 
 # Python 2.7
 # Ensure that `python` is is available on $PATH
-#export PATH=/broad/software/free/Linux/redhat_6_x86_64/pkgs/python_2.7.1-sqlite3-rtrees/bin/:$PATH
 
 
 # INPUTS #####################################################################

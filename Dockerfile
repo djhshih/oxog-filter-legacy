@@ -25,9 +25,6 @@ RUN mkdir -p /tmp/mcr-install && \
     ./install -destinationFolder /opt/mcr -agreeToLicense yes -mode silent && \
     cd / && \
     rm -rf /tmp/mcr-install
-# Adding to LD_LIBRARY_PATH causes linkage problem with other programs
-# (e.g. python pyexpat), so omit this step
-# ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/mcr/v81/runtime/glnxa64:/opt/mcr/v81/bin/glnxa64:/opt/mcr/v81/sys/os/glnxa64:/opt/mcr/v81/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/mcr/v81/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/mcr/v81/sys/java/jre/glnxa64/jre/lib/amd64" XAPPLRESDIR="/opt/mcr/v81/X11/app-defaults"
 
 # Copy workflow contents
 ADD . /opt/oxog
